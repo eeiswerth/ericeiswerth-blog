@@ -21,7 +21,14 @@ const Bio = () => {
       }
       twitter: file(absolutePath: { regex: "/twitter.png/" }) {
         childImageSharp {
-          fixed(width: 50, height: 50, quality: 95) {
+          fixed(width: 32, height: 32, quality: 95) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      linkedin: file(absolutePath: { regex: "/linkedin.png/" }) {
+        childImageSharp {
+          fixed(width: 32, height: 32, quality: 95) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -46,6 +53,7 @@ const Bio = () => {
 
   const avatar = data?.avatar?.childImageSharp?.fixed
   const twitter = data?.twitter?.childImageSharp?.fixed
+  const linkedin = data?.linkedin?.childImageSharp?.fixed
 
   return (
     <div className="bio">
@@ -61,16 +69,26 @@ const Bio = () => {
       )}
       {author?.name && (
         <p>
-          Written by <strong>{author.name}</strong> {author?.summary || null}
+          <strong>{author.name}</strong> {author?.summary || null}
           {` `}
-          <a href={`https://twitter.com/${social?.twitter || ``}`}>
-            {twitter && (
-              <Image
-                fixed={twitter}
-                className="social"
-              />
-            )}
-          </a>
+          <div>
+            <a href={`https://twitter.com/${social?.twitter || ``}`}>
+              {twitter && (
+                <Image
+                    fixed={twitter}
+                    className="social"
+                />
+              )}
+            </a>
+            <a href={`https://www.linkedin.com/in/ericeiswerth/`}>
+              {linkedin && (
+                <Image
+                    fixed={linkedin}
+                    className="social"
+                />
+              )}
+            </a>
+          </div>
         </p>
       )}
     </div>
