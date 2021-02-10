@@ -85,6 +85,9 @@ const Bio = () => {
                 <Image
                     fixed={linkedin}
                     className="social"
+                    style={{
+                      paddingLeft: `5px`
+                    }}
                 />
               )}
             </a>
