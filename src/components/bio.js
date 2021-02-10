@@ -72,7 +72,7 @@ const Bio = () => {
           <strong>{author.name}</strong> {author?.summary || null}
           {` `}
           <div>
-            <a href={`https://twitter.com/${social?.twitter || ``}`}>
+            <a href={`https://twitter.com/${social?.twitter || ``}`} target="_blank">
               {twitter && (
                 <Image
                     fixed={twitter}
@@ -80,7 +80,7 @@ const Bio = () => {
                 />
               )}
             </a>
-            <a href={`https://www.linkedin.com/in/ericeiswerth/`}>
+            <a href={`https://www.linkedin.com/in/ericeiswerth/`} target="_blank">
               {linkedin && (
                 <Image
                     fixed={linkedin}
