@@ -86,7 +86,7 @@ const Bio = () => {
                     fixed={linkedin}
                     className="social"
                     style={{
-                      paddingLeft: `5px`
+                      left: `5px`
                     }}
                 />
               )}
